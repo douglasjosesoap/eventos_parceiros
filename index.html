@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analise de Tokens parceiros</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Evento Parceiros D2C</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     <div class="container">
         <h2>Analise de Tokens</h2>
-        <input type="file" id="fileInput" accept=".xlsx, .csv">
+
+        <input type="file" id="fileInput" accept=".xlsx, .csv"/>
+
         <select id="eventType">
             <option value="">Selecione o tipo de evento</option>
             <option value="SUSPEND">SUSPEND</option>
             <option value="ACTIVATION">ACTIVATION</option>
             <option value="CHECKOUT">CHECKOUT</option>
+            <option value="CANCEL_IMMEDIATE">CANCEL_IMMEDIATE</option>
+            <option value="REACTIVATION">REACTIVATION</option>
+            <option value="ALL">TODOS OS EVENTOS</option>
         </select>
-        <button onclick="processFile()">Verificar eventos duplicados</button>
+
+        <button onclick="processFile()">Processar Arquivo</button>
         <h3 id="summary"></h3>
         <button onclick="downloadFile()">Baixar Planilha</button>
     </div>
